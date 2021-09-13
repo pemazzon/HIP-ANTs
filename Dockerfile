@@ -23,7 +23,7 @@ RUN apt-get update && \
 ENV APP_SHELL="<no>"
 ENV APP_CMD="</path/to/app/executable>"
 ENV PROCESS_NAME="<app_process_name>"
-ENV DIR_ARRAY="<app_files> <.app_config>"
+ENV DIR_ARRAY="<app_files .app_config>"
 
 HEALTHCHECK --interval=10s --timeout=10s --retries=5 --start-period=30s \
   CMD sh -c "/apps/${APP_NAME}/scripts/process-healthcheck.sh \
