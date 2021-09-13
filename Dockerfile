@@ -4,6 +4,7 @@ LABEL maintainer="<maintainer@example.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG CARD
+ARG CI_REGISTRY
 ARG APP_NAME
 ARG APP_VERSION
 
