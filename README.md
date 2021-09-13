@@ -1,6 +1,6 @@
 # app-template
 
-`app-template` the template repository for integrating new apps into the HIP. It can be used as a template when creating a new repository for an app. The provided Docker file must be completed and modified for the new app that you wish to integrate. The following modifications are needed:
+`app-template` is the template repository for integrating new apps into the HIP. It can be used as a template when creating a new repository for an app. The provided Docker file must be completed and modified for the new app that you wish to integrate. The following modifications are needed:
 
 ## Dockerfile modifications
 
