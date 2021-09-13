@@ -6,11 +6,9 @@
 
 Please do not hardcode the `app` version number. The version number will be provided to you via the variable `${APP_VERSION}`, so you can use it within the commands to install the `app`. This is necessary to be able to provide seemless updates to users, and properly tag the docker image that will be generated using your `Dockerfile`.
 
-The provided Docker file must be completed and modified for the new app that you wish to integrate. The following modifications are needed:
-
 ## `Dockerfile` modifications
 
-All parts of the `Dockerfile` marked with `<>` must be completed:
+The provided `Dockerfile` must be completed and modified for the new app that you wish to integrate. All parts of the `Dockerfile` marked with `<>` must be completed:
 
 1. `<base-image:version>` the following base images are available (all base images are based on Ubuntu 20.04 LTS):
     - `nc-webdav:1.6.0-1`: if you don't need matlab-runtime
