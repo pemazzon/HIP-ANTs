@@ -1,5 +1,5 @@
 ARG CI_REGISTRY_IMAGE
-FROM ${CI_REGISTRY_IMAGE}/<base-image>:<version>
+FROM ${CI_REGISTRY_IMAGE}/<base-image:version>
 LABEL maintainer="<maintainer@example.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
