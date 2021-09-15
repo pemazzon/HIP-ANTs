@@ -11,7 +11,7 @@ Please do not hardcode the `app` version number. The version number will be prov
 The provided `Dockerfile` must be completed and modified for the new app that you wish to integrate. All parts of the `Dockerfile` marked with `<>` must be completed:
 
 1. `<base-image:version>` the following base images are available (all base images are based on Ubuntu 20.04 LTS):
-    - `nc-webdav:1.6.0-1`: if you don't need matlab-runtime
+    - `nc-webdav:${DAVFS2_VERSION}`: if you don't need matlab-runtime, the version number will be provided by the `${DAVFS2_VERSION}` variable
     - `matlab-runtime:R2020a_u6`: if you need matlab-runtime version 2020a update 6
     - `matlab-runtime:R2020b_u5`: if you need matlab-runtime version 2020b update 5
 
