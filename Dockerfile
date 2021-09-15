@@ -1,4 +1,5 @@
 ARG CI_REGISTRY_IMAGE
+ARG DAVFS2_VERSION
 FROM ${CI_REGISTRY_IMAGE}/<base-image:version>
 LABEL maintainer="<maintainer@example.com>"
 
