@@ -14,6 +14,8 @@ The provided `Dockerfile` must be completed and modified for the new app that yo
     - `nc-webdav:${DAVFS2_VERSION}`: if you don't need matlab-runtime, the version number will be provided by the `${DAVFS2_VERSION}` variable
     - `matlab-runtime:R2020a_u6`: if you need matlab-runtime version 2020a update 6
     - `matlab-runtime:R2020b_u5`: if you need matlab-runtime version 2020b update 5
+ 
+    You have to use one of these base images, this is mandatory for your app to be integrated into the HIP.
 
 2. `<maintainer@example.com>`: replace by your email address.
 
