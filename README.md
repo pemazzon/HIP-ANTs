@@ -14,6 +14,7 @@ The provided `Dockerfile` must be completed and modified for the new app that yo
     - `nc-webdav:${DAVFS2_VERSION}`: if you don't need matlab-runtime, the version number will be provided by the `${DAVFS2_VERSION}` variable
     - `matlab-runtime:R2020a_u7`: if you need matlab-runtime version 2020a update 7
     - `matlab-runtime:R2020b_u6`: if you need matlab-runtime version 2020b update 6
+    - `jupyterlab-desktop:${JUPYTERLAB_DESKTOP_VERSION}`: if you need to run jupyterlab-desktop
  
     You have to use one of these base images, this is mandatory for your app to be integrated into the HIP.
 
@@ -23,7 +24,7 @@ The provided `Dockerfile` must be completed and modified for the new app that yo
 
 3. `<no>`: the following options are available:
     - `terminal`: when the app must be ran from a terminal. 
-    - `jupyterlab-desktop`: when the app must be ran from jupyterlab-desktop.
+    - `jupyterlab-desktop`: when the app must be ran from jupyterlab-desktop. In this case, use the `jupyterlab-desktop` base image in step 1.
     
     If used, leave `</path/to/app/executable>` in step 4 empty, otherwise set to `no`.
 
