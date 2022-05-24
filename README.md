@@ -21,7 +21,11 @@ The provided `Dockerfile` must be completed and modified for the new app that yo
 
 2. `<app>`: ubuntu package of the app to be installed. If such a package does not exist, please execute the necessary commands to install it as part of this `RUN` command. Make sure to purge all unnecessary packages at the end to keep the docker image as compact as possible. Do not forget to make use of the `${APP_VERSION}` variable.
 
-3. `<no>`: whether the app must be ran from a terminal. If yes, change to `yes` and leave `</path/to/app/executable>` in step 4 empty, otherwise set to `no`.
+3. `<no>`: the following options are available:
+    - `terminal`: when the app must be ran from a terminal. 
+    - `jupyterlab-desktop`: when the app must be ran from jupyterlab-desktop.
+    
+    If used, leave `</path/to/app/executable>` in step 4 empty, otherwise set to `no`.
 
 4. `</path/to/app/executable>`: absolute path to the app executable.
 
