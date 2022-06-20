@@ -22,7 +22,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV APP_SPECIAL="<no>"
+ENV APP_SPECIAL="<option>"
 ENV APP_CMD="</path/to/app/executable>"
 ENV PROCESS_NAME="<app_process_name>"
 ENV APP_DATA_DIR_ARRAY="<app_config_dir .app_config_dir>"
