@@ -26,7 +26,7 @@ The provided `Dockerfile` must be completed and modified for the new app that yo
     - `no`: when it's a regular app
     - `terminal`: when the app must be ran from a terminal.
     - `jupyterlab-desktop`: when the app must be ran from jupyterlab-desktop. In this case, use the `jupyterlab-desktop` base image in step 1.
- 
+
     If used, leave `</path/to/app/executable>` in step 4 empty, otherwise set to `no`.
 
 4. `</path/to/app/executable>`: absolute path to the app executable.
