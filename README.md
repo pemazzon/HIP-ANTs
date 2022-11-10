@@ -14,7 +14,7 @@ The provided `Dockerfile` must be completed and modified for the new app that yo
     - `${DOCKERFS_TYPE}:${DOCKERFS_VERSION}`: if you don't need matlab-runtime, the FS type and version will be provided by the `${DOCKERFS_TYPE}` and `${DOCKERFS_VERSION}` variables
     - `matlab-runtime:R2020a_u7`: if you need matlab-runtime version 2020a update 7
     - `matlab-runtime:R2020b_u6`: if you need matlab-runtime version 2020b update 6
-    - `jupyterlab-desktop:${JUPYTERLAB_DESKTOP_VERSION}`: if you need to run jupyterlab-desktop
+    - `jupyterlab-desktop:${JUPYTERLAB_DESKTOP_VERSION}`: if you need to run jupyterlab-desktop, the Jupyterlab Desktop version will be provided by the `${JUPYTERLAB_DESKTOP_VERSION}` variable
  
     You have to use one of these base images, this is mandatory for your app to be integrated into the HIP.
 
