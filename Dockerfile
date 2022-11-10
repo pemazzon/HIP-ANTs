@@ -1,7 +1,8 @@
 ARG CI_REGISTRY_IMAGE
+ARG TAG
 ARG DOCKERFS_TYPE
 ARG DOCKERFS_VERSION
-FROM ${CI_REGISTRY_IMAGE}/<base-image:version>
+FROM ${CI_REGISTRY_IMAGE}/<base-image:version>${TAG}
 LABEL maintainer="<maintainer@example.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -11,6 +12,7 @@ ARG APP_NAME
 ARG APP_VERSION
 
 LABEL app_version=$APP_VERSION
+LABEL app_tag=$TAG
 
 WORKDIR /apps/${APP_NAME}
 
