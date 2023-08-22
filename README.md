@@ -36,3 +36,7 @@ The provided `Dockerfile` must be completed and modified for the new app that yo
 6. `<app_config_dir .app_config_dir>`: list of directories necessary for the app to function and retain its state (database, preferences, etc.). These directories will be synced to Nextcloud and mounted into the container. The specified paths must be relative to the user home directory. For now files aren't supported, but support can be added if needed.
 
 7. `<app_data_dir1 app_data_dir2>`: list of data directories necessary to be able to run the app. These directories will be synced to Nextcloud and mounted into the container. The specified paths must be relative to the user home directory. For now files aren't supported, but support can be added if needed.
+
+## Acknowledgement
+
+This research was supported by the EBRAINS research infrastructure, funded from the European Union’s Horizon 2020 Framework Programme for Research and Innovation under the Specific Grant Agreement No. 945539 (Human Brain Project SGA3).
