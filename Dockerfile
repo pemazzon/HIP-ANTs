@@ -18,22 +18,36 @@ LABEL app_tag=$TAG
 
 WORKDIR /apps/${APP_NAME}
 
+# ARG ANTS_VERSION=2.5.3
+# RUN apt-get update && \
+#     apt-get install --no-install-recommends -y bc unzip wget && \ 
+#     cd /opt && \
+#     wget https://github.com/ANTsX/ANTs/releases/download/v${ANTS_VERSION}/ants-${ANTS_VERSION}-ubuntu-22.04-X64-gcc.zip && \
+#     unzip ants-${ANTS_VERSION}-ubuntu-22.04-X64-gcc.zip && \
+#     mv ants-${ANTS_VERSION} ants && \
+#     rm -f ants-${ANTS_VERSION}-ubuntu-22.04-X64-gcc.zip && \
+#     apt-get purge -y unzip wget && \
+#     apt-get clean && \
+#     apt-get -y autoremove && \
+#     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+FROM base AS downloader
+WORKDIR /opt
 ARG ANTS_VERSION=2.5.3
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y bc unzip wget && \ 
-    cd /opt && \
+    apt-get install --no-install-recommends -y unzip wget && \ 
     wget https://github.com/ANTsX/ANTs/releases/download/v${ANTS_VERSION}/ants-${ANTS_VERSION}-ubuntu-22.04-X64-gcc.zip && \
     unzip ants-${ANTS_VERSION}-ubuntu-22.04-X64-gcc.zip && \
-    mv ants-${ANTS_VERSION} ants && \
-    rm -f ants-${ANTS_VERSION}-ubuntu-22.04-X64-gcc.zip && \
-    apt-get purge -y unzip wget && \
+    mv ants-${ANTS_VERSION} ants
+
+FROM base AS final
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y bc && \
     apt-get clean && \
     apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# the below needs to go on the user environment so
-# an external .bash_profile is filled with these
-# we leave them here as a reference from the ANTs Dockerfile
+COPY --from=downloader /opt/ants /opt/ants
+
 ARG LD_LIBRARY_PATH
 ENV PATH="/opt/ants/bin:$PATH" \
     LD_LIBRARY_PATH="/opt/ants/lib:$LD_LIBRARY_PATH"
@@ -46,6 +60,7 @@ LABEL org.opencontainers.image.authors="ANTsX team" \
       org.opencontainers.image.description="ANTs is part of the ANTsX ecosystem (https://github.com/ANTsX). \
 ANTs Citation: https://pubmed.ncbi.nlm.nih.gov/24879923"
 
+ENV APP_CMD_PREFIX="export PATH=/opt/${APP_NAME}/bin:${PATH} LD_LIBRARY_PATH=/opt/${APP_NAME}/lib:$LD_LIBRARY_PATH"
 ENV APP_SPECIAL="terminal"
 ENV APP_CMD=""
 ENV PROCESS_NAME=""
