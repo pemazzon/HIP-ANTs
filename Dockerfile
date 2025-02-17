@@ -49,8 +49,8 @@ RUN apt-get update && \
 COPY --from=downloader /opt/ants /opt/ants
 
 ARG LD_LIBRARY_PATH
-ENV PATH="/opt/ants/bin:$PATH" \
-    LD_LIBRARY_PATH="/opt/ants/lib:$LD_LIBRARY_PATH"
+#ENV PATH="/opt/ants/bin:$PATH" \
+#    LD_LIBRARY_PATH="/opt/ants/lib:$LD_LIBRARY_PATH"
 
 LABEL org.opencontainers.image.authors="ANTsX team" \
       org.opencontainers.image.url="https://stnava.github.io/ANTs/" \
